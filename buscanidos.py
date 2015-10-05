@@ -19,17 +19,17 @@ class PinguNahual(pilasengine.actores.Actor):
 #MapaSuelo esta pensado para que pueda tener toda la información del suelo.
 class MapaSuelo():
 
+    # Las posiciones las tendriamos que definir como Ej: [1,1] [1,2] [1,3] [1,4][2,1][2,2], etc
     posiciones = 40
 
     def iniciar(self):
         pass
 
+    # Debería generar las posiciones, con los valores de caminio firme, y camino con grieta
     def generarPosiciones(self):
         pass
 
-    def generarGrietas(self):
-        pass
-
+    # Le devuelve al Pinguino los pasos posibles para su turno.
     def posiblesPasosPistas(self):
         pass
 
