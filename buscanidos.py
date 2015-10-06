@@ -37,12 +37,18 @@ dialogo = pilas.actores.Dialogo()
 
 #actores
 pingu = PinguNahual(pilas)
-moneda = pilas.actores.Moneda(x=287, y=206)
-moneda.escala = 1
+monedas = pilas.actores.Moneda() * 10
+monedas.escala = 1
 
 
 # Añadir un marcador
 puntos = pilas.actores.Puntaje(x=-280, y=200, color=pilas.colores.blanco)
 puntos.magnitud = 40
+
+def cuando_colisiona(moneda, pingu):
+    moneda.eliminar()
+    puntos.aumentar(5)
+
+pilas.colisiones.agregar(monedas, pingu, cuando_colisiona)
 
 pilas.ejecutar()
