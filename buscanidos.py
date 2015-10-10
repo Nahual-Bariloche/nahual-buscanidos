@@ -40,6 +40,13 @@ pingu = PinguNahual(pilas)
 moneda = pilas.actores.Moneda(x=287, y=206)
 moneda.escala = 1
 
+moneda.aprender(pilas.habilidades.PuedeExplotar)
+
+def colision_moneda (pingu, moneda):
+   moneda.eliminar()
+    
+pilas.colisiones.agregar(pingu, moneda, colision_moneda)
+
 
 # Añadir un marcador
 puntos = pilas.actores.Puntaje(x=-280, y=200, color=pilas.colores.blanco)
